@@ -1,0 +1,35 @@
+@import 'src/global'
+
+.leftmenu
+    height: 100%
+    width: 20%
+
+    &-container
+        display: flex
+        align-items: center
+        justify-content: space-between
+        width: $full
+        height: $full / 7
+        margin-bottom: 8px
+
+        &-calendar
+            height: $full
+            width: $full / 3
+            background-color: $bcolor
+            border-radius: 10px
+            margin-right: 5px
+
+        &-weather
+            height: $full
+            width: $full * 2 / 3
+            background-color: $bcolor
+            border-radius: 10px
+
+    &-music
+        @include columnBricks()
+
+    &-audio
+        @include columnBricks()
+
+    &-menu
+        @include columnBricks()
