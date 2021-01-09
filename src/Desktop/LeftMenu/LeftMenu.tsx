@@ -1,12 +1,13 @@
 import React from 'react'
-import Clock from './Bricks/Clock'
+import Calendar from './Bricks/Calendar/Calendar'
+import Clock from './Bricks/Clock/Clock'
 import './LeftMenu.sass'
 
 function LeftMenu() {
     return (
         <div className='leftmenu'>
             <div className='leftmenu-container'>
-                <div className='leftmenu-container-calendar'></div>
+                <Calendar />
                 <div className='leftmenu-container-weather'></div>
             </div>
             <Clock />

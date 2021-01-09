@@ -3,8 +3,8 @@ import './CenterMenu.sass'
 
 function CenterMenu() {
     return (
-        <div>
-
+        <div className='centermenu'>
+            Fonts for Apple Platforms
         </div>
     )
 }
