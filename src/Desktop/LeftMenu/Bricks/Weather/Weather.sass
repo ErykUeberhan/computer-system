@@ -1,0 +1,41 @@
+@import 'src/global'
+
+.weather
+    display: flex
+    justify-content: space-evenly
+    align-items: center
+    flex-direction: row
+    height: $full
+    width: $full * 2 / 3
+    background-color: $bcolor
+    border-radius: 10px
+    padding: 10px 30px
+    box-sizing: border-box
+
+    &-icon
+        color: #7ea6d0
+        font-size: 50px
+
+    &-info
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        margin-left: 15px
+        max-width: 50%
+
+        &-temp
+            display: flex
+            justify-content: center
+            align-items: center
+            color: #fbd2ca
+            font-size: 22px
+
+        &-desc
+            display: flex
+            justify-content: center
+            align-items: center
+            text-align: center
+            color: #b04f5d
+            font-size: 15px
+            font-weight: 600

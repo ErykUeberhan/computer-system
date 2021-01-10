@@ -15,6 +15,9 @@ function Clock() {
 
     const checkDay = (day: number): string => {
         switch (day) {
+            case 0:
+                return WeekDays.Sunday;
+                break;
             case 1:
                 return WeekDays.Monday;
                 break;
@@ -32,9 +35,6 @@ function Clock() {
                 break;
             case 6:
                 return WeekDays.Saturday;
-                break;
-            case 7:
-                return WeekDays.Sunday;
                 break;
             default:
                 return '';
