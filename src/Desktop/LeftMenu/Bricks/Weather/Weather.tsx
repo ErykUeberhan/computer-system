@@ -66,7 +66,7 @@ function Weather() {
             case Icons.MistNight:
                 return <RiMistFill />;
             default:
-                return 'aaaaaaaaaaaaaaaa';
+                return '';
         }
     }
 

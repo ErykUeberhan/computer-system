@@ -51,8 +51,8 @@ function Clock() {
     return (
         <div className='clock'>
             <div className='clock-time'>
-                <p className='clock-time-hours'>{date.getHours() < 9 ? `0${date.getHours()}` : date.getHours()}</p>
-                <p className='clock-time-minutes'>{date.getMinutes() < 9 ? `0${date.getMinutes()}` : date.getMinutes()}</p>
+                <p className='clock-time-hours'>{date.getHours() < 10 ? `0${date.getHours()}` : date.getHours()}</p>
+                <p className='clock-time-minutes'>{date.getMinutes() < 10 ? `0${date.getMinutes()}` : date.getMinutes()}</p>
             </div>
             <p className='clock-day'>{checkDay(date.getDay())}</p>
         </div>
