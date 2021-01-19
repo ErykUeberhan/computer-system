@@ -3,6 +3,7 @@
 .music
     padding: 20px
     box-sizing: border-box
+
     @include columnBricks()
 
     &-loggedin
@@ -14,25 +15,66 @@
         &-info
             display: flex
             flex-direction: column
-            justify-content: space-evenly
+            justify-content: space-between
             align-items: center
+            width: $full / 2
 
             &-title
                 display: flex
                 align-items: center
-                color: white
+                justify-content: center
+                flex-direction: row
+                overflow: hidden
+                width: $full
+                white-space: nowrap
+                color: #fbd2ca
                 font-size: 20px
+
+                &-textscroll
+                    transform: translateX(152%)
+                    width: max-content
+                &-textscrollrepeat
+                    transform: translateX(52%)
+                    width: max-content
+                &-text
+                    width: max-content
+
+            &-artist
+
+                &-text
+                    color: #b04f5d
 
             &-player
                 display: flex
-                width: 100px
-                height: 30px
-                background-color: white
+                align-items: center
+                justify-content: space-evenly
+                font-size: 30px
+                width: $full
+
+                &-backward
+                    font-size: 22px
+                    color: #fbd2ca
+
+                &-play
+                    font-size: 30px
+                    color: #b04f5d
+
+                &-pause
+                    font-size: 30px
+                    color: #b04f5d
+
+                &-forward
+                    font-size: 22px
+                    color: #fbd2ca
 
         &-image
+            display: flex
+            align-items: center
+            justify-content: center
             img
                 height: 120px
                 width: 120px
+                border: 1px solid #b04f5d
 
     &-loggedout
         display: flex
@@ -44,7 +86,6 @@
             display: flex
             align-items: center
             font-size: 50px
-            // color: #1ed760
             color: #86ba5b
 
         &-button
@@ -59,3 +100,15 @@
         &-button:hover
             cursor: pointer
             background-color: #78a751
+
+@keyframes music
+    0%
+        transform: translateX(155%)
+    100%
+        transform: translateX(-100%)
+
+@keyframes musicRepeat
+    0%
+        transform: translateX(55%)
+    100%
+        transform: translateX(-200%)
