@@ -1,0 +1,63 @@
+@import 'src/global'
+
+.search
+    flex-direction: column
+    padding: 20px 10px
+    box-sizing: border-box
+    @include columnBricks()
+
+    &-field
+        display: flex
+        align-items: center
+        justify-content: center
+        height: 40px
+        width: 70%
+        border-radius: 10px
+        background-color: #272626
+        margin-bottom: 15px
+
+        &-placeholder
+            position: absolute
+            display: flex
+            align-items: center
+            z-index: 0
+            color: #ffd5cd
+            opacity: .75
+
+            &-search
+                margin-right: 3px
+
+        &-input
+            color: #ffd5cd
+            background-color: rgba(0, 0, 0, 0)
+            z-index: 1
+            font-size: 16px
+            outline: none
+            border: none
+            width: 90%
+
+    &-menu
+        display: flex
+        align-items: center
+        justify-content: space-evenly
+        height: 60px
+        width: 100%
+
+        &-power, &-refresh, &-lock, &-moon, &-logout
+            font-size: 32px
+            cursor: pointer
+
+        &-power
+            color: #d35d6e
+
+        &-refresh
+            color: #84afdb
+
+        &-lock
+            color: #ffd5cd
+
+        &-moon
+            color: #c47eb7
+
+        &-logout
+            color: #90c861

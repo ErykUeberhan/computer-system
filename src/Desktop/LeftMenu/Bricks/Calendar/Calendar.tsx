@@ -63,8 +63,8 @@ function Calendar() {
     }
     return (
         <div className='calendar'>
-            <p className='calendar-day'>{date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}</p>
-            <p className='calendar-month'>{CheckMonth(date.getMonth())}</p>
+            <div className='calendar-day'>{date.getDate() < 10 ? `0${date.getDate()}` : date.getDate()}</div>
+            <div className='calendar-month'>{CheckMonth(date.getMonth())}</div>
         </div>
     )
 }

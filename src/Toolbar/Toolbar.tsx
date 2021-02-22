@@ -1,5 +1,7 @@
 import React from 'react'
 import './Toolbar.sass'
+import Watch from './Watch/Watch'
+import Settings from './Settings/Settings'
 
 function Toolbar() {
     return (
@@ -7,8 +9,8 @@ function Toolbar() {
             <div className='toolbar-leftshortcuts'></div>
             <div className='toolbar-rightshortcuts'>
                 <div className='toolbar-rightshortcuts-links'></div>
-                <div className='toolbar-rightshortcuts-settings'></div>
-                <div className='toolbar-rightshortcuts-clock'></div>
+                <Settings />
+                <Watch />
             </div>
         </div>
     )

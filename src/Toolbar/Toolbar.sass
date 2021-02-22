@@ -1,15 +1,5 @@
 @import 'src/global'
 
-@mixin shortcutsContainers($width, $mleft: 10px)
-    display: flex
-    align-items: center
-    justify-content: space-evenly
-    height: $full
-    width: $width
-    border-radius: 10px
-    margin-left: $mleft
-    background-color: $bcolor
-
 .toolbar
     display: flex
     align-items: center
@@ -29,9 +19,3 @@
 
         &-links
             @include shortcutsContainers(300px)
-
-        &-settings
-            @include shortcutsContainers(250px)
-
-        &-clock
-            @include shortcutsContainers(100px)

@@ -182,8 +182,11 @@ function Music() {
             loadSpotifyPlayer();
             getRecentlyPlayed();
         }
-        //getUserPlaylists();
     }, [token])
+
+    useEffect(() => {
+        if (song.playlist) getUserPlaylists();
+    }, [song.playlist])
 
     return (
         <div className='music'>
@@ -195,7 +198,7 @@ function Music() {
                                 song.cover ?
                                     <img src={song.cover} />
                                     :
-                                    's'
+                                    null
                             }
 
                         </div>
