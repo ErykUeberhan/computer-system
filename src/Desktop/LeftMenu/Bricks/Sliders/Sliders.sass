@@ -11,43 +11,155 @@ input[type=range]::-webkit-slider-thumb
 input[type=range]:focus
     outline: none
 
+.screenbright
+    position: absolute
+    top: 0
+    left: 0
+    height: 100%
+    width: 100%
+    z-index: 10000
+    pointer-events: none
+
 .sliders
     display: flex
     flex-direction: column
     align-items: center
     box-sizing: border-box
-    padding: 10px
+    justify-content: space-between
+    padding: 20px 50px
     @include columnBricks()
 
     &-volume
         display: flex
         align-items: center
+        margin-bottom: 10px
+        width: 100%
 
         &-icon
-            font-size: 24px
+            font-size: 32px
             color: #c47eb7
-            margin-right: 10px
+            margin-right: 20px
 
         &-level
             position: relative
             display: flex
             align-items: center
+            flex: 1
+
             &-slider::-webkit-slider-thumb
                 position: relative
                 -webkit-appearance: none
                 appearance: none
-                width: 10px
+                width: 3px
                 height: 10px
-                margin-top: -3px
+                margin-top: -2px
                 z-index: 100
+                cursor: pointer
 
             &-slider::-webkit-slider-runnable-track
                 height: 6px
+                background-color: #4e4e4e
+                border-radius: 10px
+                cursor: pointer
+
+            &-cover
+                position: absolute
+                height: 6px
+                background-color: #c47eb7
+                border-radius: 10px
+
+    &-brightness
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+        width: 100%
+
+        &-icon
+            font-size: 32px
+            color: #84afdb
+            margin-right: 20px
+
+        &-level
+            position: relative
+            display: flex
+            align-items: center
+            flex: 1
+
+            &-slider::-webkit-slider-thumb
+                position: relative
+                -webkit-appearance: none
+                appearance: none
+                width: 3px
+                height: 10px
+                margin-top: -2px
+                z-index: 100
+                cursor: pointer
+
+            &-slider::-webkit-slider-runnable-track
+                height: 6px
+                background-color: #4e4e4e
+                border-radius: 10px
+                cursor: pointer
+
+            &-cover
+                position: absolute
+                height: 6px
+                background-color: #84afdb
+                border-radius: 10px
+
+    &-memory
+        display: flex
+        align-items: center
+        margin-bottom: 10px
+        width: 100%
+
+        &-icon
+            font-size: 32px
+            color: #d35d6e
+            margin-right: 20px
+
+        &-level
+            position: relative
+            display: flex
+            align-items: center
+            flex: 1
+
+            &-slider
+                height: 6px
+                width: 100%
                 background-color: #4e4e4e
                 border-radius: 10px
 
             &-cover
                 position: absolute
                 height: 6px
-                background-color: #c47eb7
+                background-color: #d35d6e
+                border-radius: 10px
+
+    &-battery
+        display: flex
+        align-items: center
+        width: 100%
+
+        &-icon
+            font-size: 32px
+            color: #90c861
+            margin-right: 20px
+
+        &-level
+            position: relative
+            display: flex
+            align-items: center
+            flex: 1
+
+            &-slider
+                height: 6px
+                width: 100%
+                background-color: #4e4e4e
+                border-radius: 10px
+
+            &-cover
+                position: absolute
+                height: 6px
+                background-color: #90c861
                 border-radius: 10px
