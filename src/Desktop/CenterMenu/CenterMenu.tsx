@@ -4,7 +4,7 @@ import './CenterMenu.sass'
 function CenterMenu() {
     return (
         <div className='centermenu'>
-            Fonts for Apple Platforms
+
         </div>
     )
 }

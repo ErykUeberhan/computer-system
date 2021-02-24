@@ -1,0 +1,61 @@
+@import 'src/global'
+
+.windowview
+    position: absolute
+    // top: 50%
+    // left: 50%
+    //transform: translate(-50%, -50%)
+    display: flex
+    border: 1px solid $pink
+    box-sizing: border-box
+    border-radius: 5px
+    background-color: $bgcolor
+    width: 800px
+    height: 500px
+
+    &-toolbar
+        display: flex
+        align-items: center
+        justify-content: space-between
+        background-color: $bgcolor2
+        width: 100%
+        height: 40px
+
+        &-buttons
+            display: flex
+            justify-content: space-evenly
+            flex-direction: row
+            align-items: center
+
+            &-minimize
+                display: flex
+                align-items: center
+                justify-content: center
+                background-color: $cream
+                width: 18px
+                height: 18px
+                border-radius: 100%
+                margin-right: 10px
+                font-size: 14px
+
+            &-maximize
+                display: flex
+                align-items: center
+                justify-content: center
+                background-color: $pink
+                width: 18px
+                height: 18px
+                border-radius: 100%
+                margin-right: 10px
+                font-size: 12px
+
+            &-close
+                display: flex
+                align-items: center
+                justify-content: center
+                background-color: $red
+                width: 18px
+                height: 18px
+                border-radius: 100%
+                margin-right: 10px
+                font-size: 14px
