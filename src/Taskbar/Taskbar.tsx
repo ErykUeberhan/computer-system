@@ -1,12 +1,14 @@
 import React from 'react'
-import { selectFolderOpen, setFolderOpen } from '../Redux/appSlice'
+import { selectFolderOpen, selectSpotifyOpen, setWindowsOpen } from '../Redux/appSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import "./Taskbar.sass"
 import { RiFolder2Fill, RiFirefoxFill, RiBrushFill, RiBookletFill } from "react-icons/ri";
+import { ImSpotify } from 'react-icons/im';
 
 function Taskbar() {
     const dispatch = useDispatch();
     const folderOpen = useSelector(selectFolderOpen);
+    const spotifyOpen = useSelector(selectSpotifyOpen);
     return (
         <div className='taskbar'>
             <svg width="0" height="0" style={{ position: 'absolute' }}>
@@ -26,13 +28,17 @@ function Taskbar() {
                     <stop stopColor="#33d9ab" offset="20%" />
                     <stop stopColor="#5a89a5" offset="80%" />
                 </linearGradient>
+                <linearGradient id="spotify-gradient" x1="0" y1="0" x2="1" y2="0">
+                    <stop stopColor="#5EF56A" offset="30%" />
+                    <stop stopColor="#F55D93" offset="90%" />
+                </linearGradient>
             </svg>
 
-            <RiFolder2Fill className='taskbar-folder' style={{ fill: "url(#folder-gradient)" }} onClick={() => { dispatch(setFolderOpen({ folderOpen: !folderOpen })) }} />
+            <RiFolder2Fill className='taskbar-folder' style={{ fill: "url(#folder-gradient)" }} onClick={() => { dispatch(setWindowsOpen({ folderOpen: !folderOpen })); console.log('folder: ' + folderOpen, 'spotify: ' + spotifyOpen) }} />
             <RiFirefoxFill className='taskbar-folder' style={{ fill: "url(#browser-gradient)" }} />
             <RiBrushFill className='taskbar-folder' style={{ fill: "url(#paint-gradient)" }} />
 
-            <RiBookletFill className='taskbar-folder' style={{ fill: "url(#note-gradient)" }} />
+            <ImSpotify className='taskbar-folder' style={{ fill: "url(#spotify-gradient)" }} onClick={() => { dispatch(setWindowsOpen({ spotifyOpen: !spotifyOpen })); console.log('folder: ' + folderOpen, 'spotify: ' + spotifyOpen) }} />
             <RiBookletFill className='taskbar-folder' style={{ fill: "url(#note-gradient)" }} />
             <RiBookletFill className='taskbar-folder' style={{ fill: "url(#note-gradient)" }} />
 

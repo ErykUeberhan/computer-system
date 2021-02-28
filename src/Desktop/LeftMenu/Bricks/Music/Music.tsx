@@ -3,7 +3,7 @@ import './Music.sass'
 import { ImSpotify } from 'react-icons/im';
 import { IoIosSkipBackward, IoIosSkipForward, IoIosPlay, IoIosPause } from 'react-icons/io';
 import { useDispatch, useSelector } from 'react-redux'
-import { selectTokenSpotify, setSpotifyAPI } from '../../../../Redux/appSlice'
+import { selectTokenSpotify, setSpotify, setUser, selectUser } from '../../../../Redux/appSlice'
 
 function Music() {
     const [playState, setPlayState] = useState(false);
@@ -17,6 +17,7 @@ function Music() {
     const [code, setCode] = useState('');
     const [deviceId, setDeviceId] = useState('');
     const token = useSelector(selectTokenSpotify);
+    const user = useSelector(selectUser);
     const dispatch = useDispatch();
 
     const clientId = '5523ece294ee4a3a9a70b4b288e6994a';
@@ -27,6 +28,7 @@ function Music() {
         const scopes = 'user-read-recently-played streaming user-read-email user-read-private user-read-currently-playing user-read-playback-state user-modify-playback-state user-library-read';
         window.location.href = 'https://accounts.spotify.com/authorize?response_type=code&client_id=' + clientId +
             (scopes ? '&scope=' + encodeURIComponent(scopes) : '') + '&redirect_uri=' + encodeURIComponent(redirectURL);
+        dispatch(setUser({ user: true }));
     }
 
     const loadSpotifyPlayer = () => {
@@ -72,7 +74,7 @@ function Music() {
                     'Authorization': 'Basic ' + btoa(clientId + ':' + clientSecret)
                 },
                 body: `grant_type=authorization_code&code=${code}&redirect_uri=${redirectURL}`,
-            }).then(res => res.json()).then((data) => { dispatch(setSpotifyAPI({ tokenSpotify: data.access_token })) })
+            }).then(res => res.json()).then((data) => { dispatch(setSpotify({ tokenSpotify: data.access_token })) })
         }
     }
 
@@ -238,12 +240,18 @@ function Music() {
                     </div>
                     :
                     <div className='music-loggedout'>
-                        <div className='music-loggedout-icon' onClick={() => { console.log(token) }}>
+                        <div className='music-loggedout-icon'>
                             <ImSpotify />
                         </div>
-                        <div className='music-loggedout-button' onClick={() => { Login() }}>
-                            Log in
-                        </div>
+                        {
+                            user ?
+                                <div className='music-loggedout-button' onClick={() => { Login() }}>
+                                    Log in
+                                </div> :
+                                <div className='music-loggedout-button' onClick={() => { Login() }}>
+                                    Run Spotify
+                                </div>
+                        }
                     </div>
             }
         </div >
