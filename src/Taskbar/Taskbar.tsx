@@ -34,11 +34,11 @@ function Taskbar() {
                 </linearGradient>
             </svg>
 
-            <RiFolder2Fill className='taskbar-folder' style={{ fill: "url(#folder-gradient)" }} onClick={() => { dispatch(setWindowsOpen({ folderOpen: !folderOpen })); console.log('folder: ' + folderOpen, 'spotify: ' + spotifyOpen) }} />
+            <RiFolder2Fill className='taskbar-folder' style={{ fill: "url(#folder-gradient)" }} onClick={() => { dispatch(setWindowsOpen({ folderOpen: !folderOpen })) }} />
             <RiFirefoxFill className='taskbar-folder' style={{ fill: "url(#browser-gradient)" }} />
             <RiBrushFill className='taskbar-folder' style={{ fill: "url(#paint-gradient)" }} />
 
-            <ImSpotify className='taskbar-folder' style={{ fill: "url(#spotify-gradient)" }} onClick={() => { dispatch(setWindowsOpen({ spotifyOpen: !spotifyOpen })); console.log('folder: ' + folderOpen, 'spotify: ' + spotifyOpen) }} />
+            <ImSpotify className='taskbar-folder' style={{ fill: "url(#spotify-gradient)" }} onClick={() => { dispatch(setWindowsOpen({ spotifyOpen: !spotifyOpen })) }} />
             <RiBookletFill className='taskbar-folder' style={{ fill: "url(#note-gradient)" }} />
             <RiBookletFill className='taskbar-folder' style={{ fill: "url(#note-gradient)" }} />
 

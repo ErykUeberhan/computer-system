@@ -4,7 +4,7 @@ import './Spotify.sass'
 function Spotify() {
     return (
         <div className='spotify'>
-            siema
+            SZPOTIFY
         </div>
     )
 }

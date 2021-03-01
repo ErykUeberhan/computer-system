@@ -1,19 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export const appSlice = createSlice({
     name: 'app',
     initialState: {
-        beng: [],
         tokenSpotify: '',
+        spotifyOpen: false,
+        folderOpen: false,
         user: false,
     },
     reducers: {
         setSpotify: (state, action) => {
             state.tokenSpotify = action.payload.tokenSpotify;
         },
-        setWindowsOpen: (state, action) => {
-            state.beng = action.payload;
-            state.spotifyOpen = false;
+        setWindowsOpen: (state, action: PayloadAction<any>) => {
+            state.spotifyOpen = typeof action.payload.spotifyOpen !== 'undefined' ? action.payload.spotifyOpen : state.spotifyOpen;
+            state.folderOpen = typeof action.payload.folderOpen !== 'undefined' ? action.payload.folderOpen : state.folderOpen;
         },
         setUser: (state, action) => {
             state.user = action.payload.user;
