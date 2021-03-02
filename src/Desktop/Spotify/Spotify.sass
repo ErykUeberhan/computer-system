@@ -2,9 +2,35 @@
 
 .spotify
     display: flex
-    justify-content: center
     align-items: center
-    font-size: 50px
+    flex-direction: column
+    font-weight: 600
+    background-color: #2f2837
+    color: #e3e0e6
     height: 100%
     width: 100%
-    color: $green
+
+    &-body
+        display: flex
+        align-items: center
+        flex-direction: row
+        width: 100%
+        flex: 1
+
+        &-playlists
+            display: flex
+            width: 250px
+            height: 100%
+            border-right: 5px solid #2ad69b
+
+        &-songs
+            display: flex
+            height: 100%
+            flex: 1
+
+    &-player
+        display: flex
+        height: 100px
+        width: 100%
+        box-sizing: border-box
+        box-shadow: 0px -10px 100px -10px black
