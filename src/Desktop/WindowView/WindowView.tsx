@@ -5,7 +5,7 @@ import { BiWindows, BiWindow } from 'react-icons/bi';
 import { useDispatch } from 'react-redux';
 import { setWindowsOpen } from '../../Redux/appSlice';
 
-function WindowView({ appName, component, isOpen }: any) {
+function WindowView({ appName, component, isOpen, icon }: any) {
     let windowOpen = isOpen;
     let app = appName + 'Open'
     const [screenMode, setScreenMode] = useState({
@@ -69,7 +69,8 @@ function WindowView({ appName, component, isOpen }: any) {
     return (
         <div className='windowview' id={appName} ref={ref} style={{ display: screenMode.display, height: screenMode.height, width: screenMode.width, top: screenMode.top + 'px', left: screenMode.left + 'px', borderWidth: screenMode.border }}>
             <div className='windowview-toolbar' onMouseDown={(e) => { getMoveMouse(e); setIsWindowMoving(true) }} onMouseUp={() => { setIsWindowMoving(false) }}>
-                <div></div>
+                {icon}
+                <div className='windowview-toolbar-title'>{appName[0].toUpperCase() + appName.substring(1)}</div>
                 <div className='windowview-toolbar-buttons'>
                     <div className='windowview-toolbar-buttons-minimize' onClick={() => { dispatch(setWindowsOpen({ [app]: !windowOpen })) }} onMouseDown={(e) => { e.stopPropagation() }}>
                         <IoMdRemove />
